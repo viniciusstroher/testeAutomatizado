@@ -15,7 +15,7 @@ setar no path %PATH%
 
 
 Baixar appium
-
+setar no caps.js a lib do android
 
 # Node.js samples
 
