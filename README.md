@@ -14,8 +14,10 @@ setar no path %PATH%
 %ANDROID_HOME%\bin %ANDROID_HOME%\platform-tools %ANDROID_HOME%\build-tools
 
 
-Baixar appium
+#Baixar appium
 setar no caps.js a lib do android
+setar apps.js com os app para baixar e instalar
+
 
 # Node.js samples
 

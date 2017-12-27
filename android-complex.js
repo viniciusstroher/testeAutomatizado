@@ -26,6 +26,7 @@ describe("android complex", function () {
       _.clone(require("./helpers/caps").android18) :
       _.clone(require("./helpers/caps").android19);
     desired.app = require("./helpers/apps").androidApiDemos;
+    
     if (process.env.npm_package_config_sauce) {
       desired.name = 'android - complex';
       desired.tags = ['sample'];

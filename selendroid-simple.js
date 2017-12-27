@@ -12,20 +12,23 @@ describe("selendroid simple", function () {
   var allPassed = true;
 
   before(function () {
-    var serverConfig = process.env.npm_package_config_sauce ?
-      serverConfigs.sauce : serverConfigs.local;
-    driver = wd.promiseChainRemote(serverConfig);
+    var serverConfig = process.env.npm_package_config_sauce ? serverConfigs.sauce : serverConfigs.local;
+    driver           = wd.promiseChainRemote(serverConfig);
+
     require("./helpers/logging").configure(driver);
 
     var desired = _.clone(require("./helpers/caps").selendroid16);
     desired.app = require("./helpers/apps").androidApiDemos;
+    
     if (process.env.npm_package_config_sauce) {
       desired.name = 'selendroid - simple';
       desired.tags = ['sample'];
     }
+    
     return driver
       .init(desired)
       .setImplicitWaitTimeout(3000);
+  
   });
 
   after(function () {
