@@ -18,6 +18,7 @@ setar no path %PATH%
 setar no caps.js a lib do android
 setar apps.js com os app para baixar e instalar
 
+#rodar  'node roda-local-server.js' e setar app dentro da pasta bin e alterar no rodar-local-server.js 
 
 # Node.js samples
 
