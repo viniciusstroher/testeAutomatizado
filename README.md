@@ -1,3 +1,22 @@
+# INSTALAR AMBIENTE
+
+jdk 7
+sdk for tools 
+
+# Lib para android 6.0.1 - 19.0.0
+sdkmanager.bat "platform-tools;tools;build-tools;19.0.0"
+
+setar JAVA_HOME = 
+setar ANDROID_HOME = 
+
+setar no path %PATH%
+%JAVA_HOME%\bin
+%ANDROID_HOME%\bin %ANDROID_HOME%\platform-tools %ANDROID_HOME%\build-tools
+
+
+Baixar appium
+
+
 # Node.js samples
 
 ## Prerequisites
