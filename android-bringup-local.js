@@ -5,12 +5,13 @@ require("./helpers/setup");
 var wd            = require("wd"),
                 _ = require('underscore'),
     serverConfigs = require('./helpers/appium-servers');
-var asserters = wd.asserters; // commonly used asserters
+
 
 describe("Bringup TEST", function () {
   this.timeout(300000);
   var driver;
   var allPassed = true;
+  var asserters = wd.asserters; // commonly used asserters
 
   before(function () {
     var serverConfig = serverConfigs.local;
@@ -113,6 +114,7 @@ describe("Bringup TEST", function () {
       .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/div/div[1]/button")
       .click()
 
+      .waitForElementByCss('.loading-container', asserters.isNotDisplayed , 10000)
   });
   
 
@@ -125,19 +127,26 @@ describe("Bringup TEST", function () {
       })
       
 
-      //espera o loading sumir
-      .waitForElementByCss('.loading-container', asserters.isNotDisplayed , 10000)
+      //espera o loading sumir isDisplayed - isNotDisplayed - olhar asserters
+      //.waitForElementByCss('.loading-container', asserters.isNotDisplayed , 10000)
+      .waitForElementByCss('ion-header-bar button', asserters.isDisplayed , 10000)
+      .then(function(el){
+          el.click();
+          // console.log("######");
+      })
+      .waitForElementByCss('button[menu-close]', asserters.isDisplayed , 10000)
+      .then(function(el){
+          el.click();
+          // console.log("######");
+      })
+      .waitForElementByCss(".popup-buttons .button-positive", asserters.isDisplayed , 10000)
+      .then(function(el){
+          el.click();
+          // console.log("######");
+      })
 
-      .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-bar/div[2]/ion-header-bar/div[1]/span/button",14000)
-      .tap()
-      .sleep(2000)                      
-
-
-      .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu[1]/ion-content/div/button")
-      .click()
-      .sleep(2000)                            
-      .elementByXPath("/html/body/div[3]/div/div[3]/button[2]")
-      .click()
+      // .elementByXPath("/html/body/div[3]/div/div[3]/button[2]")
+      // .click()
   })  
 
 });
