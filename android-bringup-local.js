@@ -22,23 +22,37 @@ describe("Bringup TEST", function () {
     
     //USA ANDROID - celular fisico - 6.0.1 - J5 metal
     var desired = _.clone(
+                    // {
+                    //   browserName: '',
+                    //   'appium-version': '1.6',
+                    //   platformName: 'Android',
+                    //   platformVersion: '6.0.1',
+                    //   deviceName: 'Android Emulator',
+                    //   app: 'br.com.bringupapp', // will be set later
+                    //   noReset: true,
+                    //   fullReset: false
+                    // }
                     {
-                      browserName: '',
                       'appium-version': '1.6',
                       platformName: 'Android',
                       platformVersion: '6.0.1',
                       deviceName: 'Android Emulator',
-                      app: 'br.com.bringupapp', // will be set later
+                      appPackage: 'br.com.bringupapp', // will be set later
+                      appActivity: '.BringUp',
                       noReset: true,
                       fullReset: false
                     }
+
+
     );
     
     //APP A SER INSTALADO
     //var androidApiDemos = "https://build.phonegap.com/apps/1970105/download/android";
     //rodar rodar-local-server.js antes de iniciar mocha
-    var androidApiDemos = "http://localhost:3000/BringUp-debug.apk";
-    desired.app         = androidApiDemos;
+    
+    //var androidApiDemos = "http://localhost:3000/BringUp-debug.apk";
+    //desired.app         = androidApiDemos;
+    
     //desired.app = require("./helpers/apps").androidApiDemos;
     
     if (process.env.npm_package_config_sauce) {
@@ -79,8 +93,32 @@ describe("Bringup TEST", function () {
       //.elementByCss('.button.button-positive')
       //.click()
 
+      //selecionar ele
+
       .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view/adiciona-conteudo/div/div[1]/button")
       .click()
+      .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[2]/input")
+      .click()
+      .sendKeys("viniciusferreirawk@gmail.com")
+
+      .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[3]/input")
+      .click()
+      .sendKeys("gree")
+
+
+      .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/div/div[1]/button")
+      .click()
+
+      .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-bar/div[2]/ion-header-bar/div[1]/span/button")
+      .click()
+
+      .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu[1]/ion-content/div/button")
+      .click()
+      
+      .elementByXPath("/html/body/div[3]/div/div[3]/button[1]")
+      .click()
+      
+
       .sleep(20000);
       
       // await el1.click();
