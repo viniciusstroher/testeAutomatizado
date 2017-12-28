@@ -81,7 +81,7 @@ describe("Bringup TEST", function () {
     allPassed = allPassed && this.currentTest.state === 'passed';
   });
 
-  /*
+  
   it("login", function () {
     
         
@@ -114,7 +114,7 @@ describe("Bringup TEST", function () {
       .click()
 
   });
-  */
+  
 
   it("logout",function(){
       return driver
