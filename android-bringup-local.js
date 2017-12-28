@@ -68,29 +68,28 @@ describe("Bringup TEST", function () {
 
   
   it("login", function () {
-    return driver
-        .contexts().then(function (contexts) { // get list of available views. Returns array: ["NATIVE_APP","WEBVIEW_1"]
-            console.log('contextos',contexts)
-            return driver.context(contexts[1]); // choose the webview context
-        })
-      let el1 = driver.element("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View[1]/android.widget.Button");
-      el1.click();
-      let el2 = driver.element("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText");
-      el2.click();
-      let el3 = driver.element("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout");
-      el3.setValue("viniciusferreirawk@gmail.com");
-      let el4 = driver.element("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.view.View[3]");
-      el4.click();
-      el4.setValue("gree");
-      let el5 = driver.element("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText");
-      el5.click();
-      el5.click();
-      el5.setValue("viniciusferreirawk@gmail.com");
-      let el6 = driver.element("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.Button[1]");
-      el6.click();
+    
+        
+      return driver
+      .contexts()
+      .then(function (contexts) { // get list of available views. Returns array: ["NATIVE_APP","WEBVIEW_1"]
+          console.log('contextos',contexts);
+          return driver.context(contexts[1]); // choose the webview context
+      })
+      .elementByCss('.button.button-positive')
+      .click()
+      .sleep(20000);
+      
+      // await el1.click();
+      // let el2 = await driver.elementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText");
+      // await el2.click();
+      // await el2.sendKeys("viniciusferreirawk@gmail.com");
+      // let el3 = await driver.elementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.view.View[3]/android.widget.EditText");
+      // await el3.click();
+      // await el3.sendKeys("gree");
+      // let el4 = await driver.elementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.Button[1]");
+      // await el4.click();
 
-
-      driver.sleep(20000);
       /*.elementByAccessibilityId('Arcs')
         .should.eventually.exist
       .back()
