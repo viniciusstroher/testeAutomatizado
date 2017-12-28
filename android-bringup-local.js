@@ -95,21 +95,32 @@ describe("Bringup TEST", function () {
 
       //selecionar ele
 
-      // .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view/adiciona-conteudo/div/div[1]/button")
-      // .click()
+      .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view/adiciona-conteudo/div/div[1]/button")
+      .should.exists
+      .click()
       
-      // .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[2]/input")
-      // .click()
-      // .sendKeys("viniciusferreirawk@gmail.com")
+      .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[2]/input")
+      .click()
+      .sendKeys("viniciusferreirawk@gmail.com")
 
-      // .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[3]/input")
-      // .click()
-      // .sendKeys("gree")
+      .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[3]/input")
+      .click()
+      .sendKeys("gree")
 
 
-      // .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/div/div[1]/button")
-      // .click()
+      .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/div/div[1]/button")
+      .click()
 
+  });
+  
+
+  it("logout",function(){
+      return driver
+      .contexts()
+      .then(function (contexts) { // get list of available views. Returns array: ["NATIVE_APP","WEBVIEW_1"]
+          console.log('contextos',contexts);
+          return driver.context(contexts[1]); // choose the webview context
+      })
        .sleep(6000)                      
       
 
@@ -123,32 +134,6 @@ describe("Bringup TEST", function () {
       .sleep(2000)                            
       .elementByXPath("/html/body/div[3]/div/div[3]/button[2]")
       .click()
-      
-
-      // .sleep(20000);
-      
-      // await el1.click();
-      // let el2 = await driver.elementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText");
-      // await el2.click();
-      // await el2.sendKeys("viniciusferreirawk@gmail.com");
-      // let el3 = await driver.elementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.view.View[3]/android.widget.EditText");
-      // await el3.click();
-      // await el3.sendKeys("gree");
-      // let el4 = await driver.elementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.Button[1]");
-      // await el4.click();
-
-      /*.elementByAccessibilityId('Arcs')
-        .should.eventually.exist
-      .back()
-      .elementByName('App')
-        .should.eventually.exist
-      .elementsByAndroidUIAutomator('new UiSelector().clickable(true)')
-        .should.eventually.have.length(12)
-      .elementsByAndroidUIAutomator('new UiSelector().enabled(true)')
-        .should.eventually.have.length.above(20)
-      .elementByXPath('//android.widget.TextView[@text=\'API Demos\']')
-        .should.exists;*/
-  });
-  
+  })  
 
 });
