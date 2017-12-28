@@ -5,6 +5,7 @@ require("./helpers/setup");
 var wd            = require("wd"),
                 _ = require('underscore'),
     serverConfigs = require('./helpers/appium-servers');
+var asserters = wd.asserters; // commonly used asserters
 
 describe("Bringup TEST", function () {
   this.timeout(300000);
@@ -80,7 +81,7 @@ describe("Bringup TEST", function () {
     allPassed = allPassed && this.currentTest.state === 'passed';
   });
 
-  
+  /*
   it("login", function () {
     
         
@@ -96,15 +97,16 @@ describe("Bringup TEST", function () {
       //selecionar ele
 
       .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view/adiciona-conteudo/div/div[1]/button")
-      .should.exists
       .click()
       
       .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[2]/input")
       .click()
+      .clear()
       .sendKeys("viniciusferreirawk@gmail.com")
 
       .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[3]/input")
       .click()
+      .clear()
       .sendKeys("gree")
 
 
@@ -112,7 +114,7 @@ describe("Bringup TEST", function () {
       .click()
 
   });
-  
+  */
 
   it("logout",function(){
       return driver
@@ -121,10 +123,12 @@ describe("Bringup TEST", function () {
           console.log('contextos',contexts);
           return driver.context(contexts[1]); // choose the webview context
       })
-       .sleep(6000)                      
       
 
-      .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-bar/div[2]/ion-header-bar/div[1]/span/button")
+      //espera o loading sumir
+      .waitForElementByCss('.loading-container', asserters.isNotDisplayed , 10000)
+
+      .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-bar/div[2]/ion-header-bar/div[1]/span/button",14000)
       .tap()
       .sleep(2000)                      
 
