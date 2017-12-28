@@ -95,31 +95,37 @@ describe("Bringup TEST", function () {
 
       //selecionar ele
 
-      .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view/adiciona-conteudo/div/div[1]/button")
-      .click()
-      .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[2]/input")
-      .click()
-      .sendKeys("viniciusferreirawk@gmail.com")
+      // .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view/adiciona-conteudo/div/div[1]/button")
+      // .click()
+      
+      // .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[2]/input")
+      // .click()
+      // .sendKeys("viniciusferreirawk@gmail.com")
 
-      .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[3]/input")
-      .click()
-      .sendKeys("gree")
+      // .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/label[3]/input")
+      // .click()
+      // .sendKeys("gree")
 
 
-      .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/div/div[1]/button")
-      .click()
+      // .elementByXPath("/html/body/div[2]/div/div[2]/div/form/ion-list/div/div/div[1]/button")
+      // .click()
+
+       .sleep(6000)                      
+      
 
       .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-bar/div[2]/ion-header-bar/div[1]/span/button")
-      .click()
+      .tap()
+      .sleep(2000)                      
+
 
       .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu[1]/ion-content/div/button")
       .click()
-      
-      .elementByXPath("/html/body/div[3]/div/div[3]/button[1]")
+      .sleep(2000)                            
+      .elementByXPath("/html/body/div[3]/div/div[3]/button[2]")
       .click()
       
 
-      .sleep(20000);
+      // .sleep(20000);
       
       // await el1.click();
       // let el2 = await driver.elementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText");
