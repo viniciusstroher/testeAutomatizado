@@ -22,9 +22,10 @@ setar apps.js com os app para baixar e instalar
 
 # Node.js samples
 
-## Prerequisites
+##USAR XPATH
+selecionar no chrome inspect o elemento > botao direito > copy > xpath
 
-Install local packages:
+#Install local packages:
 
 ```
 npm install

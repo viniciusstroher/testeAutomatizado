@@ -76,7 +76,10 @@ describe("Bringup TEST", function () {
           console.log('contextos',contexts);
           return driver.context(contexts[1]); // choose the webview context
       })
-      .elementByCss('.button.button-positive')
+      //.elementByCss('.button.button-positive')
+      //.click()
+
+      .elementByXPath("/html/body/ion-nav-view/ion-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view/adiciona-conteudo/div/div[1]/button")
       .click()
       .sleep(20000);
       
